@@ -25,7 +25,7 @@ This is how to set this project up on your computer:
 127.0.0.1 phalcon.api
 * if you want something other than phalcon.api then search/replace all the "phalcon.api" entries in this repository
   with the name you like (for example phalcon.local)
-- now go to project directory, then go to "application" dir (on your computer) and run "composer install"
+- now go to project directory, then go to "application" dir (on your computer) and run "composer install" to install dependencies (see application/composer.json)
 - now go to project directory and run "docker-compose build". It will download all images required.
 - run "docker-compose up -d" to run containers
     * after that http://phalcon.api will be up and running
