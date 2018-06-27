@@ -1,0 +1,64 @@
+language: generic
+
+sudo: required
+dist: trusty
+
+env:
+  - DOCKER_COMPOSE_VERSION="1.6.2"
+  - DOCKER_COMPOSE_VERSION="1.7.0"
+  - DOCKER_COMPOSE_VERSION="1.7.1"
+  - DOCKER_COMPOSE_VERSION="1.8.0"
+  - DOCKER_COMPOSE_VERSION="1.8.1"
+  - DOCKER_COMPOSE_VERSION="1.9.0"
+
+git:
+  depth: 1
+
+cache:
+  - apt
+
+before_install:
+  - sudo service docker stop
+  - sudo apt-get update -qq
+  - sudo apt-get install -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y --force-yes docker-engine
+  - sudo service docker restart
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -sSL https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - stty cols 160
+  - cp variables.env.example variables.env
+
+install:
+  - make pull
+  - make help
+
+before_script:
+  - make build
+  - make check
+  - sleep 1
+
+script:
+  - make up
+  - sleep 1
+  - make status
+  - make stop
+  - make status
+  - make start
+  - make status
+  - docker volume ls
+  - make version
+  - curl -sI http://localhost:80   | grep 'HTTP/1.1 200 OK'
+  - curl -sI http://localhost:8080 | grep 'HTTP/1.1 200 OK'
+  - make reset
+  - make status
+
+after_failure:
+  - bash bin/logs.sh
+
+notifications:
+  email:
+    recipients:
+      - build@phalconphp.com
+    on_success: change
+    on_failure: always

@@ -1,0 +1,38 @@
+{
+    "name": "sergeyklay/phalcon-compose",
+    "description": "Open-source and community-driven boilerplate for Phalcon projects by using Docker and Docker Compose",
+    "keywords": ["phalcon", "docker", "compose", "boilerplate", "skeleton"],
+    "license": "MIT",
+    "type": "project",
+    "homepage": "https://phalcon-compose.readme.io/",
+    "authors": [
+        {
+            "name": "Phalcon Team",
+            "email": "team@phalconphp.com",
+            "homepage": "http://phalconphp.com/en/team"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/phalcon/phalcon-compose/graphs/contributors"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/phalcon/phalcon-compose",
+        "issues": "https://github.com/phalcon/phalcon-compose/issues",
+        "docs": "https://phalcon-compose.readme.io/",
+        "forum": "https://forum.phalconphp.com/",
+        "wiki": "https://github.com/phalcon/cphalcon/wiki",
+        "irc": "irc://irc.freenode.org/phalcon-compose",
+        "rss": "https://blog.phalconphp.com/rss"
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('variables.env') || copy('variables.env.example', 'variables.env');\""
+        ]
+    },
+    "extra": {
+        "phalcon-project-path": "/project",
+        "phalcon-cache-path": "/project/cache",
+        "phalcon-logs-path": "/project/logs"
+    }
+}

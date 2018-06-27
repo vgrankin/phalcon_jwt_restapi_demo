@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  mongo:
+    restart: always
+    image: mongo:3.4
+    expose:
+      - "27017"
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo:/data/db
+
+  app:
+    build: docker/app
+    restart: always
+    working_dir: /project
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./application:/project
+      - ./cache:/project/cache
+      - ./logs:/project/logs
+      - ./conf/php/cli.ini:/etc/php/7.0/cli/conf.d/100-custom.ini
+      - ./conf/php/fpm.ini:/etc/php/7.0/fpm/conf.d/100-custom.ini    
+    env_file:
+      - variables.env
+
+volumes:
+  mongo:
+    driver: local

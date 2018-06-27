@@ -1,0 +1,9 @@
+{
+    "require": {
+        "firebase/php-jwt": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0",
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}
