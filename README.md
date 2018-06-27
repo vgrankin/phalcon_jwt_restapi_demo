@@ -45,7 +45,7 @@ This is how to set this project up on your computer:
 
 Usage:
 - open postman
-- to create dummy user in the database execute get request: http://phalcon.api/create_user 
+- to create dummy user in the database execute get request: http://phalcon.api/api/create_user 
 - now use something like Postman to execute this POST request: 
 	- http://phalcon.api/api/authenticate
 	- POST data:
@@ -56,7 +56,7 @@ Usage:
 	* auth token will be shown, copy it to clipboard (in reality you will want to send or store this token as part of the response)
 - to test if authentication mechanics works, use Postman with the following settings:
 	- authentication test for valid authentication:
-		- GET request to: http://phalcon.api/auth_test
+		- GET request to: http://phalcon.api/api/auth_test
 		- create header called "Authorization" and set it's value to "Bearer <token>" where <token> is your token from clipboard
 		- make sure header is enabled in postman (checkmark is checked)
 		- send the request
