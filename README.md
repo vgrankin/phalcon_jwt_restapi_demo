@@ -4,7 +4,7 @@ This project utilizes Phalcon PHP framework, MongoDB and JWT firebase library to
 It demonstrates how to implement REST API features and can be used as example REST API project or a starting point.
 
 application/index.php is an entry point of the application and it contains several api examples which 
-demonstrate how to authenticate user using JWT (Json Web Token), how to check is uses is authenticated (using JWT token) 
+demonstrate how to authenticate user using JWT (Json Web Token), how to check if user is authenticated (using JWT token) 
 when only-for-authenticated-users parts of the api are being accessed and it also demonstrates how to use services 
 which use MongoDB to store data.
 
@@ -28,7 +28,7 @@ This is how to set this project up on your computer:
 - now go to project directory, then go to "application" dir (on your computer) and run "composer install" to install dependencies (see application/composer.json)
 - now go to project directory and run "docker-compose build". It will download all images required.
 - run "docker-compose up -d" to run containers
-    * after that http://phalcon.api will be up and running
+    * after that http://phalcon.api should be up and running
 
 - current mongo db hack required to allow mongodb connections:
     - make sure containers are running ("docker-compose up -d")
@@ -47,7 +47,7 @@ Usage:
 - open postman
 - to create dummy user in the database execute get request: http://phalcon.api/create_user 
 - now use something like Postman to execute this POST request: 
-	- http://phalcon.api/authenticate
+	- http://phalcon.api/api/authenticate
 	- POST data:
 		- email: phalconuser@phalconapi.com
 		- password: test123
