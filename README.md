@@ -77,10 +77,10 @@ Usage:
 
 ## Links
 
-[:release:]:   https://github.com/phalcon/phalcon-compose/releases
-[:status:]:    https://travis-ci.org/phalcon/phalcon-compose
-[:phalcon:]:   https://github.com/phalcon/cphalcon
-[:downloads:]: https://packagist.org/sergeyklay/phalcon-compose
-[:docker:]:    https://www.docker.com
-[:compose:]:   https://phalcon-compose.readme.io
-[:license:]:   https://github.com/phalcon/phalcon-compose/blob/master/LICENSE.txt
+https://github.com/phalcon/phalcon-compose/releases
+https://travis-ci.org/phalcon/phalcon-compose
+https://github.com/phalcon/cphalcon
+https://packagist.org/sergeyklay/phalcon-compose
+https://www.docker.com
+https://phalcon-compose.readme.io
+https://github.com/phalcon/phalcon-compose/blob/master/LICENSE.txt
