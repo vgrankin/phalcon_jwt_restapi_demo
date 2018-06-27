@@ -20,10 +20,12 @@ This is how to set this project up on your computer:
 
 - clone this repository into directory you prefer (for example D:\dev\jwtrest or any other)
 - install docker (and docker-compose)
+- install composer on your computer (not docker container)
 - Open your hosts file (/etc/hosts) and enter a new line like this:
 127.0.0.1 phalcon.api
 * if you want something other than phalcon.api then search/replace all the "phalcon.api" entries in this repository
   with the name you like (for example phalcon.local)
+- now go to project directory, then go to "application" dir (on your computer) and run "composer install"
 - now go to project directory and run "docker-compose build". It will download all images required.
 - run "docker-compose up -d" to run containers
     * after that http://phalcon.api will be up and running
@@ -37,6 +39,7 @@ This is how to set this project up on your computer:
     - go to project's config/config.php and replace "172.19.0.2" with your value (this is for the mongodb to allow your connection)
 
 - run "docker-compose down" to stop containers when you finish your work
+* additionally look at documentation for the docker-phalcon version of a framework package: https://phalconphp.com/en/download/docker
 
 ## Usage
 
@@ -77,10 +80,5 @@ Usage:
 
 ## Links
 
-- https://github.com/phalcon/phalcon-compose/releases
-- https://travis-ci.org/phalcon/phalcon-compose
-- https://github.com/phalcon/cphalcon
-- https://packagist.org/sergeyklay/phalcon-compose
+- https://phalconphp.com/en/download/docker
 - https://www.docker.com
-- https://phalcon-compose.readme.io
-- https://github.com/phalcon/phalcon-compose/blob/master/LICENSE.txt
