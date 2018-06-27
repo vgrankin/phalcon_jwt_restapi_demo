@@ -15,3 +15,4 @@ composer.lock
 .hg
 application/vendor
 applicaton/composer.lock
+nbproject
