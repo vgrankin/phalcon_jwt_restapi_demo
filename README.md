@@ -90,11 +90,12 @@ Usage:
 ## Notes
 
 You will still need to:
-    - implement token refresh
-    - send or store jwt the appropriate way on client system
-    - implement SSL (https) instead of http connection
-    - reorganize code for your needs and implement new features
-    * use docker and composer to install additional software required by your project
+- implement token refresh
+- send or store jwt the appropriate way on client system
+- map responses of your API with appropriate HTTP statuses (for example when to send 200 or 500 etc.)
+- implement SSL (https) instead of http connection
+- reorganize code for your needs and implement new features
+* use docker and composer to install additional software required by your project
 
 ## Links
 
