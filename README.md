@@ -38,6 +38,15 @@ This is how to set this project up on your computer:
     - copy "IPAddress" value to clipboard: "172.19.0.2" for example
     - go to project's config/config.php and replace "172.19.0.2" with your value (this is for the mongodb to allow your connection)
 
+* in case you are on Windows and you have a problem when php container restarts over and over, probably in this case 
+  the error is caused due to git usage which (by default) automatically converts LF to CRLF. Status of the container
+  will be something like this: "STATUS Restarting (127) Less than a second ago". The error will be something like this:
+  "/opt/docker/provision/entrypoint.d/fix-permissions.sh: line 2: $'\r': command not found". This means we need to go to
+  docker/app/bin/fix-permissions.sh on Windows (directory to which you cloned this repo) and to use Notepad++ 
+  (or other editor you prefer) to replace CRLF to LF (Edit -> EOL Conversion -> Unix LF). After that you may want to 
+  stop/remove all containers for this project, delete images and run "docker-compose build" again, then 
+  "docker-compose up -d". Now everything should work correctly.
+
 - run "docker-compose down" to stop containers when you finish your work
 * additionally look at documentation for the docker-phalcon version of a framework package: https://phalconphp.com/en/download/docker
 
@@ -77,6 +86,15 @@ Usage:
 	- now go to "/project/tests" directory (or any other name you use in variables.env) and execute phpunit
 	  * looks something like this: "root@e242331f2013:/project/tests# phpunit"
 	  * as a result should see something like: "OK (4 tests, 10 assertions)"
+
+## Notes
+
+You will still need to:
+    - implement token refresh
+    - send or store jwt the appropriate way on client system
+    - implement SSL (https) instead of http connection
+    - reorganize code for your needs and implement new features
+    * use docker and composer to install additional software required by your project
 
 ## Links
 
