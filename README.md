@@ -90,6 +90,9 @@ Usage:
 ## Notes
 
 You will still need to:
+- restructure urls according to best REST API practices
+- use HTTP methods (GET, POST, PUT, DELETE etc.) according to best REST API practices
+- send HTTP statuses according to best REST API practices
 - implement token refresh
 - send or store jwt the appropriate way on client system
 - map responses of your API with appropriate HTTP statuses (for example when to send 200 or 500 etc.)
